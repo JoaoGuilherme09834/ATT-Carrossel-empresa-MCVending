@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MCVending | Máquinas e Produtos</title>
+
+    <style>
+
+        :root {
+            --cor-principal: #5a2d16;
+            --cor-secundaria: #c98b45;
+            --cor-clara: #f5efe8;
+            --cor-escura: #21140e;
+            --cor-branca: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f8f3ed, #e8d7c5);
+            color: var(--cor-escura);
+        }
+
+        header {
+            background: linear-gradient(135deg, #21140e, #5a2d16);
+            color: var(--cor-branca);
+            text-align: center;
+            padding: 30px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+
+        /* ESCONDE OS BOTÕES DE RADIO */
+
+        input[type="radio"] {
+            display: none;
+        }
+
+
+        /* ÁREA VISÍVEL DO CARROSSEL */
+
+        .carrossel {
+            overflow: hidden;
+
+            border: 5px solid var(--cor-principal);
+            border-radius: 15px;
+        }
+
+
+        /* CONJUNTO DOS SLIDES */
+
+        .slides {
+            display: flex;
+
+            width: 500%;
+
+            transition: transform 0.5s ease;
+        }
+
+
+        /* CADA SLIDE */
+
+        .slide {
+            width: 20%;
+            flex-shrink: 0;
+        }
+
+
+        .slide img {
+            width: 100%;
+            height: 450px;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+
+        .slide figcaption {
+            background: linear-gradient(90deg, #21140e, #5a2d16);
+            color: white;
+
+            text-align: center;
+
+            padding: 15px;
+        }
+
+
+        /* MOVIMENTAÇÃO DOS SLIDES */
+
+        #slide1:checked ~ .carrossel .slides {
+            transform: translateX(0);
+        }
+
+        #slide2:checked ~ .carrossel .slides {
+            transform: translateX(-20%);
+        }
+
+        #slide3:checked ~ .carrossel .slides {
+            transform: translateX(-40%);
+        }
+
+        #slide4:checked ~ .carrossel .slides {
+            transform: translateX(-60%);
+        }
+
+        #slide5:checked ~ .carrossel .slides {
+            transform: translateX(-80%);
+        }
+
+
+        /* BOTÕES */
+
+        .botoes {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            margin-top: 20px;
+        }
+
+
+        .botoes label {
+            width: 20px;
+            height: 20px;
+
+            background-color: var(--cor-secundaria);
+
+            border-radius: 50%;
+
+            cursor: pointer;
+        }
+
+
+        .botoes label:hover {
+            background-color: var(--cor-principal);
+        }
+
+
+        footer {
+            background: linear-gradient(135deg, #21140e, #3b2115);
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+
+            margin-top: 40px;
+        }
+
+
+        /* CELULAR */
+
+        @media (max-width: 700px) {
+
+            .slide img {
+                height: 280px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <header>
+
+        <h1>MCVending Máquinas e Produtos</h1>
+
+        <p>Tecnologia, praticidade e qualidade em cada xícara</p>
+
+    </header>
+
+
+    <main>
+
+        <h2>Conheça nossas soluções</h2>
+
+
+        <!-- BOTÕES INVISÍVEIS -->
+
+        <input type="radio" name="carrossel" id="slide1" checked>
+
+        <input type="radio" name="carrossel" id="slide2">
+
+        <input type="radio" name="carrossel" id="slide3">
+
+        <input type="radio" name="carrossel" id="slide4">
+
+        <input type="radio" name="carrossel" id="slide5">
+
+
+        <!-- CARROSSEL -->
+
+        <section class="carrossel">
+
+            <div class="slides">
+
+
+                <figure class="slide">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=80"
+                        alt="Café gourmet"
+                    >
+
+                    <figcaption>
+                        Cafés selecionados para uma experiência de alta qualidade.
+                    </figcaption>
+
+                </figure>
+
+
+                <figure class="slide">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1000&q=80"
+                        alt="Café expresso"
+                    >
+
+                    <figcaption>
+                        Café expresso, cappuccino e bebidas quentes com praticidade.
+                    </figcaption>
+
+                </figure>
+
+
+                <figure class="slide">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1511081692775-05d0f180a065?auto=format&fit=crop&w=1000&q=80"
+                        alt="Máquina profissional de café"
+                    >
+
+                    <figcaption>
+                        Máquinas profissionais para empresas, cafeterias e estabelecimentos.
+                    </figcaption>
+
+                </figure>
+
+
+                <figure class="slide">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1000&q=80"
+                        alt="Cafeteria profissional"
+                    >
+
+                    <figcaption>
+                        Venda, locação e manutenção de equipamentos para bebidas quentes.
+                    </figcaption>
+
+                </figure>
+
+
+                <figure class="slide">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1000&q=80"
+                        alt="Grãos de café"
+                    >
+
+                    <figcaption>
+                        Insumos e produtos para manter sua operação sempre abastecida.
+                    </figcaption>
+
+                </figure>
+
+            </div>
+
+        </section>
+
+
+        <!-- BOTÕES VISÍVEIS -->
+
+        <div class="botoes">
+
+            <label for="slide1"></label>
+
+            <label for="slide2"></label>
+
+            <label for="slide3"></label>
+
+            <label for="slide4"></label>
+
+            <label for="slide5"></label>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <p>MCVending • Máquinas, produtos e soluções para bebidas quentes</p>
+
+    </footer>
+
+</body>
+
+</html>
